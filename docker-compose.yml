@@ -3,11 +3,10 @@ version: '3.8'
 services:
   jotihunt-forwarder:
     image: ghcr.io/ScoutingScherpenzeel/jotihunt-forwarder:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file:
-      - .env  # Load environment variables from a .env file
-    volumes:
-      - ./session:/app/session  # Mount a volume for session persistence
+    environment:
+      - TELEGRAM_API_ID=
+      - TELEGRAM_API_HASH=
+      - TELEGRAM_SESSION_STRING=
+      - DISCORD_BOT_TOKEN=
+      - DISCORD_CHANNEL_ID=
     restart: unless-stopped  # Automatically restart the bot unless it is stopped manually
