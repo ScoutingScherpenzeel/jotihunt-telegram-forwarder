@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   jotihunt-forwarder:
-    image: ghcr.io/ScoutingScherpenzeel/jotihunt-forwarder:latest
+    image: ghcr.io/ScoutingScherpenzeel/jotihunt-telegram-forwarder:latest
     environment:
       - TELEGRAM_API_ID=
       - TELEGRAM_API_HASH=
