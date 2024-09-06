@@ -24,12 +24,18 @@ intents = discord.Intents.default()
 discord_client = discord.Client(intents=intents)
 
 def convert_telegram_formatting(message):
-    for entity in message.entities or []:
+    entities = message.entities or []
+    text = message.message
+    
+    # Sort entities in reverse order by their offset
+    entities.sort(key=lambda entity: entity.offset, reverse=True)
+    
+    for entity in entities:
         if isinstance(entity, MessageEntityBold):
-            message.message = message.message[:entity.offset] + '**' + \
-                message.message[entity.offset:entity.offset + entity.length] + '**' + \
-                message.message[entity.offset + entity.length:]
-    return message.message
+            # Wrap the text with ** for bold
+            text = text[:entity.offset] + '**' + text[entity.offset:entity.offset + entity.length] + '**' + text[entity.offset + entity.length:]
+           
+    return text
 
 @telegram_client.on(events.NewMessage(from_users=bot_username))
 async def handler(event):
