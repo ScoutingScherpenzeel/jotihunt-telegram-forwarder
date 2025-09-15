@@ -9,7 +9,7 @@ The easiest way to run this script on a server is using Docker.
 1. Copy the `docker-compose.yml` file to your server
 2. Edit the environment variables in the `docker-compose.yml` file, or create a `.env` file with the same variables and set the `env_file` variable in the `docker-compose.yml` file to the path of the `.env` file
 3. Run `docker-compose up -d`
-4. The script will run in the background and will forward messages to the Discord channel specified in the `DISCORD_CHANNEL_ID` environment variable.
+4. The script will run in the background and will forward messages to the Discord channel specified in the `DISCORD_TELEGRAM_CHANNEL_ID` environment variable.
 5. Happy forwarding!
 
 ## Retrieving the Telegram API key

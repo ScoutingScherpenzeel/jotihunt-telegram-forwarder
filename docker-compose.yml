@@ -8,5 +8,5 @@ services:
       - TELEGRAM_API_HASH=
       - TELEGRAM_SESSION_STRING=
       - DISCORD_BOT_TOKEN=
-      - DISCORD_CHANNEL_ID=
+      - DISCORD_TELEGRAM_CHANNEL_ID=
     restart: unless-stopped  # Automatically restart the bot unless it is stopped manually

@@ -14,7 +14,7 @@ api_hash = os.getenv('TELEGRAM_API_HASH')
 session_string = os.getenv('TELEGRAM_SESSION_STRING')
 bot_username = os.getenv('TELEGRAM_BOT_USERNAME', '@Jotihunt_bot')  # Default to "@Jotihunt_bot"
 discord_token = os.getenv('DISCORD_BOT_TOKEN')
-discord_channel_id = int(os.getenv('DISCORD_CHANNEL_ID'))
+discord_channel_id = int(os.getenv('DISCORD_TELEGRAM_CHANNEL_ID'))
 
 # Initialize Telegram client
 telegram_client = TelegramClient(StringSession(session_string), api_id, api_hash)
